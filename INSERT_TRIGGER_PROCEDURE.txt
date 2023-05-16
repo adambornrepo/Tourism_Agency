@@ -1,0 +1,390 @@
+
+-- Tour:
+
+INSERT INTO Tour (tour_id, name, description, start_date, end_date, price)
+VALUES (1, 'Istanbul Tour', 'Visit the historical landmarks of Istanbul', '2023-07-15', '2023-07-20', 500.00);
+
+INSERT INTO Tour (tour_id, name, description, start_date, end_date, price)
+VALUES (2, 'Cappadocia Tour', 'Discover the unique landscape of Cappadocia', '2023-08-01', '2023-08-05', 800.00);
+
+INSERT INTO Tour (tour_id, name, description, start_date, end_date, price)
+VALUES (3, 'Ephesus Tour', 'Explore the ancient ruins of Ephesus', '2023-09-10', '2023-09-13', 350.00);
+
+INSERT INTO Tour (tour_id, name, description, start_date, end_date, price)
+VALUES (4, 'Pamukkale Tour', 'Visit the natural wonders of Pamukkale', '2023-10-05', '2023-10-07', 250.00);
+
+INSERT INTO Tour (tour_id, name, description, start_date, end_date, price)
+VALUES (5, 'Black Sea Tour', 'Experience the unique culture and nature of the Black Sea region', '2023-11-15', '2023-11-20', 700.00);
+
+-- Destination:
+
+INSERT INTO Destination (destination_id, name, description, location, dest_image_id) 
+VALUES (1, 'Istanbul', 'A vibrant city that straddles two continents, with a rich history and culture.', 'Turkey', NULL);
+
+INSERT INTO Destination (destination_id, name, description, location, dest_image_id) 
+VALUES (2, 'Cappadocia', 'A unique and otherworldly landscape of fairy chimneys, underground cities, and hot air balloon rides.', 'Turkey', NULL);
+
+INSERT INTO Destination (destination_id, name, description, location, dest_image_id) 
+VALUES (3, 'Ephesus', 'An ancient city filled with ruins and historical significance, including the Temple of Artemis, one of the Seven Wonders of the Ancient World.', 'Turkey', NULL);
+
+INSERT INTO Destination (destination_id, name, description, location, dest_image_id) 
+VALUES (4, 'Pamukkale', 'A natural wonder of white travertine terraces and thermal hot springs.', 'Turkey', NULL);
+
+INSERT INTO Destination (destination_id, name, description, location, dest_image_id) 
+VALUES (5, 'Antalya', 'A picturesque coastal city known for its beautiful beaches and historical sites, such as the ancient city of Perge.', 'Turkey', NULL);
+
+
+-- Tour_Destination (Bu kısım yazılmadı) -- AMA YAZILMASI LAZIM STORE -- 
+
+-- Tourist :
+
+INSERT INTO Tourist (tourist_id, first_name, last_name, email, phone, birthdate)
+VALUES (1, 'John', 'Doe', 'johndoe@example.com', '555-1234', '1990-01-01');
+
+INSERT INTO Tourist (tourist_id, first_name, last_name, email, phone, birthdate)
+VALUES (2, 'Jane', 'Doe', NULL, '555-5678', '1992-05-15');
+
+INSERT INTO Tourist (tourist_id, first_name, last_name, email, phone, birthdate)
+VALUES (3, 'Bob', 'Smith', 'bobsmith@example.com', '555-9876', '1985-11-30');
+
+INSERT INTO Tourist (tourist_id, first_name, last_name, email, phone, birthdate)
+VALUES (4, 'Alice', 'Johnson', 'alicejohnson@example.com', '555-5555', '1998-02-14');
+
+INSERT INTO Tourist (tourist_id, first_name, last_name, email, phone, birthdate)
+VALUES (5, 'Tom', 'Wilson', NULL, '555-4321', '1979-07-22');
+
+-- Guide :
+
+INSERT INTO Guide (guide_id, first_name, last_name, email, phone, birthdate)
+VALUES (1, 'Mike', 'Smith', 'mikesmith@example.com', '555-1234', '1988-03-15');
+
+INSERT INTO Guide (guide_id, first_name, last_name, email, phone, birthdate)
+VALUES (2, 'Emily', 'Jones', NULL, '555-5678', '1990-07-22');
+
+INSERT INTO Guide (guide_id, first_name, last_name, email, phone, birthdate)
+VALUES (3, 'Jack', 'Wong', 'jackwong@example.com', '555-9876', '1985-11-30');
+
+INSERT INTO Guide (guide_id, first_name, last_name, email, phone, birthdate)
+VALUES (4, 'Sarah', 'Kim', 'sarahkim@example.com', '555-5555', '1995-09-18');
+
+INSERT INTO Guide (guide_id, first_name, last_name, email, phone, birthdate)
+VALUES (5, 'Alex', 'Brown', NULL, '555-4321', '1992-04-05');
+
+-- Tour_Guide (Yazılmadı) -- AMA YAZILMASI LAZIM STORE -- :
+
+-- Booking_Status :
+
+INSERT INTO Booking_Status (booking_status_id, status)
+VALUES (1, 'Confirmed');
+
+INSERT INTO Booking_Status (booking_status_id, status)
+VALUES (2, 'Cancelled');
+
+INSERT INTO Booking_Status (booking_status_id, status)
+VALUES (3, 'Completed');
+
+--Toor_Booking  :
+
+INSERT INTO Tour_Booking (tour_booking_id, tourist_id, tour_id, booking_date, booking_status_id)
+VALUES (1, 1, 5, '2022-05-15', 1);
+
+INSERT INTO Tour_Booking (tour_booking_id, tourist_id, tour_id, booking_date, booking_status_id)
+VALUES (2, 2, 4, '2022-06-03', 2);
+
+INSERT INTO Tour_Booking (tour_booking_id, tourist_id, tour_id, booking_date, booking_status_id)
+VALUES (3, 2, 3, '2022-07-08', 3);
+
+INSERT INTO Tour_Booking (tour_booking_id, tourist_id, tour_id, booking_date, booking_status_id)
+VALUES (4, 3, 2, '2022-08-21', 1);
+
+INSERT INTO Tour_Booking (tour_booking_id, tourist_id, tour_id, booking_date, booking_status_id)
+VALUES (5, 4, 1, '2022-09-10', 2);
+
+-- Language :
+
+INSERT INTO Language (language_id, language_name)
+VALUES (1, 'English');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (2, 'French');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (3, 'Spanish');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (4, 'German');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (5, 'Italian');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (6, 'Mandarin');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (7, 'Japanese');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (8, 'Korean');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (9, 'Arabic');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (10, 'Russian');
+
+INSERT INTO Language (language_id, language_name)
+VALUES (11, 'Turkish');
+
+-- Tourist_Language :
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (1, 1, 1);
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (2, 2, 2);
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (3, 3, 3);
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (4, 4, 4);
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (5, 5, 5);
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (6, 1, 6);
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (7, 2, 7);
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (8, 3, 8);
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (9, 4, 9);
+
+INSERT INTO Tourist_Language (tourist_language_id, tourist_id, language_id)
+VALUES (10, 5, 10);
+
+-- Tour_Guide_Languange :
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (1, 1, 1);
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (2, 2, 2);
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (3, 3, 3);
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (4, 4, 4);
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (5, 5, 5);
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (6, 1, 6);
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (7, 2, 7);
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (8, 3, 8);
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (9, 4, 9);
+
+INSERT INTO Tour_Guide_Language (guide_language_id, guide_id, language_id)
+VALUES (10, 5, 10);
+
+-- Payment_Method :
+
+INSERT INTO Payment_Method (payment_method_id, name)
+VALUES (1, 'Credit Card');
+
+INSERT INTO Payment_Method (payment_method_id, name)
+VALUES (2, 'Paypal');
+
+INSERT INTO Payment_Method (payment_method_id, name)
+VALUES (3, 'Bank Transfer');
+
+INSERT INTO Payment_Method (payment_method_id, name)
+VALUES (4, 'Cash');
+
+-- Payment :
+
+INSERT INTO Payment (payment_id, tour_booking_id, payment_method_id, payment_date, amount)
+VALUES (1, 1, 1, '2023-05-02', 700.00);
+
+INSERT INTO Payment (payment_id, tour_booking_id, payment_method_id, payment_date, amount)
+VALUES (2, 2, 2, '2023-05-03', 250.00);
+
+INSERT INTO Payment (payment_id, tour_booking_id, payment_method_id, payment_date, amount)
+VALUES (3, 3, 3, '2023-05-04', 350.00);
+
+INSERT INTO Payment (payment_id, tour_booking_id, payment_method_id, payment_date, amount)
+VALUES (4, 4, 4, '2023-05-05', 800.00);
+
+INSERT INTO Payment (payment_id, tour_booking_id, payment_method_id, payment_date, amount)
+VALUES (5, 5, 1, '2023-05-06', 500.00);
+
+-- Role :
+
+INSERT INTO Role (role_id, role_type)
+VALUES (1, 'tourist');
+
+INSERT INTO Role (role_id, role_type)
+VALUES (2, 'guide');
+
+-- Login :
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (1, 'tourist1', '123456', 'tourist1@example.com', 1);
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (2, 'tourist2', '123456', 'tourist2@example.com', 1);
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (3, 'tourist3', '123456', 'tourist3@example.com', 1);
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (4, 'tourist4', '123456', 'tourist4@example.com', 1);
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (5, 'tourist5', '123456', 'tourist5@example.com', 1);
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (6, 'guide1', '123456', 'guide1@example.com', 2);
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (7, 'guide2', '123456', 'guide2@example.com', 2);
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (8, 'guide3', '123456', 'guide3@example.com', 2);
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (9, 'guide4', '123456', 'guide4@example.com', 2);
+
+INSERT INTO Login (login_id, username, password, email, role_id)
+VALUES (10, 'guide5', '123456', 'guide5@example.com', 2);
+
+-- Vehicle :
+
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (1, 'Mercedes-Benz Sprinter', '34 ABC 123');
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (2, 'Volkswagen Caravelle', '35 DEF 456');
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (3, 'Ford Transit', '35 GHI 789');
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (4, 'Fiat Ducato', '34 JKL 012');
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (5, 'Renault Master', '35 MNO 345');
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (6, 'Iveco Daily', '34 PQR 678');
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (7, 'Peugeot Boxer', '35 STU 901');
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (8, 'Citroen Jumper', '34 VWX 234');
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (9, 'Opel Vivaro', '35 YZ 567');
+INSERT INTO Vehicle (vehicle_id, name, plate_number) VALUES (10, 'Mercedes-Benz Vito', '34 ABC 890');
+
+-- Driver :
+
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (1, 'Ahmet', 'Yılmaz', '5551112233');
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (2, 'Mehmet', 'Kara', '5552223344');
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (3, 'Ayşe', 'Demir', '5553334455');
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (4, 'Fatma', 'Ak', '5554445566');
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (5, 'Ali', 'Beyaz', '5555556677');
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (6, 'Merve', 'Sarı', '5556667788');
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (7, 'Burak', 'Kırmızı', '5557778899');
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (8, 'Gizem', 'Mor', '5558889900');
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (9, 'Emre', 'Yeşil', '5559990011');
+INSERT INTO Driver (driver_id, first_name, last_name, phone) VALUES (10, 'Ece', 'Turuncu', '5550001122');
+
+-- Accommodation :
+
+INSERT INTO Accommodation (accommodation_id, name, description, location) VALUES (1, 'Grand Hotel', '5-star hotel', 'Istanbul');
+INSERT INTO Accommodation (accommodation_id, name, description, location) VALUES (2, 'Izmir Palas Hotel', '4-star hotel', 'Izmir');
+INSERT INTO Accommodation (accommodation_id, name, description, location) VALUES (3, 'Trabzon Hilton Hotel', '5-star hotel', 'Trabzon');
+INSERT INTO Accommodation (accommodation_id, name, description, location) VALUES (4, 'Denizli Park Hotel', '3-star hotel', 'Denizli');
+INSERT INTO Accommodation (accommodation_id, name, description, location) VALUES (5, 'Cappadocia Cave Suites', 'Boutique hotel in a cave', 'Nevsehir');
+
+-- Meal_Option (Optional Yazılmadı) :
+
+-- Tour_Vehicle (Yazılmadı) -- AMA YAZILMASI LAZIM STORE -- :
+
+-- Tour_Driver (Yazılmadı) -- AMA YAZILMASI LAZIM STORE --  :
+
+-- Tourist_Feedback : 
+
+INSERT INTO Tourist_Feedback (tourist_feedback_id, tourist_id, star, description) VALUES (1, 1, 4, 'The overall experience was great. I enjoyed the tour and the guide was knowledgeable.');
+INSERT INTO Tourist_Feedback (tourist_feedback_id, tourist_id, star, description) VALUES (2, 2, 5, 'I had an amazing time. The tour was well-organized and the accommodation was fantastic.');
+INSERT INTO Tourist_Feedback (tourist_feedback_id, tourist_id, star, description) VALUES (3, 3, 3, 'The tour was okay but could have been better. Some parts of it felt rushed and there was not enough time for sightseeing.');
+INSERT INTO Tourist_Feedback (tourist_feedback_id, tourist_id, star, description) VALUES (4, 4, 4, 'I really enjoyed the tour. The guide was friendly and helpful, and the itinerary was well-planned.');
+INSERT INTO Tourist_Feedback (tourist_feedback_id, tourist_id, star, description) VALUES (5, 5, 2, 'Unfortunately, I did not have a good experience on the tour. The accommodation was not up to par and some of the activities were not as advertised.');
+
+-- Guide_Feedback(Yazılmadı) :
+
+-- Customer_Service_Employee :
+
+INSERT INTO Customer_Service_Employee (employee_id, name, last_name, email, phone) VALUES (1, 'John', 'Doe', 'johndoe@example.com', '+1 (123) 456-7890');
+INSERT INTO Customer_Service_Employee (employee_id, name, last_name, email, phone) VALUES (2, 'Jane', 'Smith', 'janesmith@example.com', '+1 (234) 567-8901');
+INSERT INTO Customer_Service_Employee (employee_id, name, last_name, email, phone) VALUES (3, 'David', 'Lee', 'davidlee@example.com', '+1 (345) 678-9012');
+
+-- Request_Type :
+
+INSERT INTO Request_Type (request_type_id, type_name) VALUES (1, 'Complaint');
+INSERT INTO Request_Type (request_type_id, type_name) VALUES (2, 'Suggestion');
+INSERT INTO Request_Type (request_type_id, type_name) VALUES (3, 'Inquiry');
+INSERT INTO Request_Type (request_type_id, type_name) VALUES (4, 'Feedback');
+INSERT INTO Request_Type (request_type_id, type_name) VALUES (5, 'Request');
+
+-- Customer_Service_Request :
+
+INSERT INTO Customer_Service_Request (service_request_id, customer_id, employee_id, request_type_id, request_description, request_date_time) VALUES (1, 1, 1, 1, 'I have a question about my booking', '2023-05-02 10:30:00');
+INSERT INTO Customer_Service_Request (service_request_id, customer_id, employee_id, request_type_id, request_description, request_date_time) VALUES (2, 2, 2, 1, 'I want to make a complaint about my tour guide', '2023-05-03 14:45:00');
+INSERT INTO Customer_Service_Request (service_request_id, customer_id, employee_id, request_type_id, request_description, request_date_time) VALUES (3, 3, 3, 3, 'I have a suggestion for improving your website', '2023-05-04 09:15:00');
+INSERT INTO Customer_Service_Request (service_request_id, customer_id, employee_id, request_type_id, request_description, request_date_time) VALUES (4, 4, 1, 4, 'I need assistance in rescheduling my tour', '2023-05-05 11:30:00');
+INSERT INTO Customer_Service_Request (service_request_id, customer_id, employee_id, request_type_id, request_description, request_date_time) VALUES (5, 5, 2, 5, 'I want to cancel my booking', '2023-05-06 16:00:00');
+
+
+-- Payment_Status  :
+
+INSERT INTO Payment_Status (pay_status_id, status_name) VALUES 
+(1, 'Unpaid'),
+(2, 'Paid');
+
+
+-- TRIGGER : Geçmiş tarihli bir tour için booking oluşturulamaz hata fırlatır.
+
+CREATE TRIGGER tr_Booking_ValidStartDate
+ON Tour_Booking
+AFTER INSERT
+AS
+BEGIN
+    IF EXISTS(SELECT 1 FROM Tour t JOIN inserted i ON t.tour_id = i.tour_id WHERE t.start_date < CONVERT(date, GETDATE()))
+    BEGIN
+        RAISERROR('Bookings for past tours are not allowed!', 20, 1);
+        ROLLBACK TRANSACTION;
+    END
+END
+
+
+-- STORE PROCEDURE : tour_booking ID si ni parametre olarak alan prosedure;
+Paymet tablosundaki amount kısmını tour fiyatı +  meal option da yemek alındıysa fiyatını yoksa 0 olarak toplayıp toplam fiyat olarak günceller.
+
+CREATE PROCEDURE UpdatePaymentAmount
+    @tour_booking_id INT
+AS
+BEGIN
+    DECLARE @tour_price DECIMAL(10,2), @meal_price DECIMAL(10,2), @total_price DECIMAL(10,2)
+    
+    SELECT @tour_price = t.price
+    FROM Tour t
+    WHERE tour_id = (SELECT tour_id FROM Tour_Booking WHERE tour_booking_id = @tour_booking_id)
+    
+    SELECT @meal_price = mo.price
+    FROM Meal_Option mo
+    WHERE tour_booking_id = @tour_booking_id
+    
+    SET @total_price = @tour_price + ISNULL(@meal_price, 0)
+    
+    UPDATE Payment
+    SET amount = @total_price
+    WHERE tour_booking_id = @tour_booking_id
+END

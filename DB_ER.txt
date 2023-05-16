@@ -1,0 +1,55 @@
+1- Tour(<<tour_id>> PK, name, description, start_date, end_date, price)
+
+2- Destination(<<destination_id>> PK, name, description, location, dest_image_id)
+
+3- Destination_Image(<<dest_image_id>> PK, image)
+
+4- Tour_Destination(<<tour_id>>, <<destination_id>>)
+
+5- Tourist(<<tourist_id>> PK, first_name, last_name, email, phone, birthdate)  
+
+6- Guide(<<guide_id>> PK, first_name, last_name, email, phone, birthdate)
+
+7- Tour_Guide(<<tour_id>>, <<guide_id>>)
+
+8- Tour_Booking(<<tour_booking_id>> PK, tourist_id FK, tour_id FK, booking_date, booking_status_id FK)
+
+9- Booking_Status(<<booking_status_id>> PK, status)
+
+10- Language(<<language_id>> PK, language_name)
+
+11- Tourist_Language(<<tourist_language_id>> PK, tourist_id FK, language_id FK)
+
+12- Tour_Guide_Language(<<guide_language_id>> PK, guide_id FK, language_id FK)
+
+13- Payment_Method(<<payment_method_id>> PK, name)
+
+14- Payment(<<payment_id>> PK, tour_booking_id FK, payment_method_id FK, payment_date, amount)
+
+15- Login(<<login_id>> PK, username, password, email, role_id FK)
+
+16- Role(<<role_id>> PK, role_type)
+
+17- Vehicle(<<vehicle_id>> PK, name, plate_number)
+
+18- Driver(<<driver_id>> PK, first_name, last_name, phone)
+
+19- Accommodation(<<accommodation_id>> PK, name, description, location, acc_img_id FK)
+
+20- Accommodation_Image(<<acc_img_id>> PK, image)
+
+21- Meal_Option(<<meal_option_id>> PK, tour_booking_id FK, name, description, price,)
+
+22- Tour_Vehicle(<<tour_vehicle_id>> PK, tour_id FK, vehicle_id FK, start_date, end_date)
+
+23- Tour_Driver(<<tour_driver_id>> PK, tour_id FK, driver_id FK, start_date, end_date)
+
+24- Tourist_Feedback(<<tourist_feedback_id>> PK, tourist_id FK, star, description)
+
+25- Tour_Guide_Feedback(<<guide_feedback_id>> PK, guide_id FK, description)
+
+26- Customer_Service_Request(<<service_request_id>> PK, customer_id FK, employee_id FK, request_type_id FK, request_description, request_date_time)
+
+27- Customer_Service_Employee(<<employee_id>> PK, name, last_name, email, phone)
+
+28- Request_Type (<<request_type_id>>, type_name)

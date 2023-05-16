@@ -1,0 +1,185 @@
+--CREATE TABLE CODES:
+
+CREATE TABLE Tour (
+    tour_id INT PRIMARY KEY,
+    name NVARCHAR(50) NOT NULL, --index
+    description TEXT,
+    start_date DATE NOT NULL,  --index
+    end_date DATE NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
+CREATE TABLE Destination_Image (
+    dest_image_id INT PRIMARY KEY,
+    image VARBINARY(MAX) NOT NULL
+);
+CREATE TABLE Destination (
+    destination_id INT PRIMARY KEY,
+    name NVARCHAR(50) NOT NULL,  --index
+    description TEXT,
+    location NVARCHAR(50),
+    dest_image_id INT,
+    FOREIGN KEY (dest_image_id) REFERENCES Destination_Image(dest_image_id)
+);
+CREATE TABLE Tour_Destination (
+    tour_id INT,
+    destination_id INT,
+    PRIMARY KEY (tour_id, destination_id),
+    FOREIGN KEY (tour_id) REFERENCES Tour(tour_id),
+    FOREIGN KEY (destination_id) REFERENCES Destination(destination_id)
+);
+CREATE TABLE Tourist (
+    tourist_id INT PRIMARY KEY,
+    first_name NVARCHAR(50) NOT NULL,--index
+    last_name NVARCHAR(50) NOT NULL,
+    email NVARCHAR(100),
+    phone VARCHAR(20) NOT NULL, --index
+    birthdate DATE
+);
+CREATE TABLE Guide (
+    guide_id INT PRIMARY KEY,
+    first_name NVARCHAR(50) NOT NULL, --index
+    last_name NVARCHAR(50) NOT NULL,
+    email NVARCHAR(100),
+    phone VARCHAR(20) NOT NULL, --index
+    birthdate DATE
+);
+CREATE TABLE Tour_Guide (
+    tour_id INT,
+    guide_id INT,
+    PRIMARY KEY (tour_id, guide_id),
+    FOREIGN KEY (tour_id) REFERENCES Tour(tour_id),
+    FOREIGN KEY (guide_id) REFERENCES Guide(guide_id)
+);
+CREATE TABLE Booking_Status (
+    booking_status_id INT PRIMARY KEY,
+    status NVARCHAR(50)
+);
+CREATE TABLE Tour_Booking (
+    tour_booking_id INT PRIMARY KEY,
+    tourist_id INT,
+    tour_id INT,
+    booking_date DATE NOT NULL,
+    booking_status_id INT,
+    FOREIGN KEY (tourist_id) REFERENCES Tourist(tourist_id),
+    FOREIGN KEY (tour_id) REFERENCES Tour(tour_id),
+    FOREIGN KEY (booking_status_id) REFERENCES Booking_Status(booking_status_id)
+);
+CREATE TABLE Language (
+    language_id INT PRIMARY KEY,
+    language_name NVARCHAR(50)
+);
+CREATE TABLE Tourist_Language (
+    tourist_language_id INT PRIMARY KEY,
+    tourist_id INT,
+    language_id INT,
+    FOREIGN KEY (tourist_id) REFERENCES Tourist(tourist_id),
+    FOREIGN KEY (language_id) REFERENCES Language(language_id)
+);
+CREATE TABLE Tour_Guide_Language (
+    guide_language_id INT PRIMARY KEY,
+    guide_id INT,
+    language_id INT,
+    FOREIGN KEY (guide_id) REFERENCES Guide(guide_id),
+    FOREIGN KEY (language_id) REFERENCES Language(language_id)
+);
+CREATE TABLE Payment_Method (
+    payment_method_id INT PRIMARY KEY,
+    name NVARCHAR(50)
+);
+CREATE TABLE Payment_Status (
+    pay_status_id smallint PRIMARY KEY,
+    status_name nvarchar(20)
+);
+CREATE TABLE Payment (
+    payment_id int PRIMARY KEY,
+    tour_booking_id int FOREIGN KEY REFERENCES Tour_Booking(tour_booking_id),
+    payment_method_id int FOREIGN KEY REFERENCES Payment_Method(payment_method_id),
+    payment_date date, 
+    pay_status_id smallint FOREIGN KEY REFERENCES Payment_Status(pay_status_id),
+    amount numeric(10,2)
+);
+CREATE TABLE Role (
+    role_id int PRIMARY KEY,
+    role_type nvarchar(50)
+)
+CREATE TABLE Login (
+    login_id int PRIMARY KEY,
+    username nvarchar(50) NOT NULL, --index
+    password nvarchar(50) NOT NULL,
+    email nvarchar(100),
+    role_id int FOREIGN KEY REFERENCES Role(role_id)
+);
+CREATE TABLE Vehicle (
+    vehicle_id int PRIMARY KEY,
+    name nvarchar(50),
+    plate_number varchar(50)  --index
+)
+CREATE TABLE Driver (
+    driver_id int PRIMARY KEY,
+    first_name nvarchar(50) NOT NULL, --index
+    last_name nvarchar(50) NOT NULL,
+    phone varchar(20) NOT NULL  --index
+);
+CREATE TABLE Accommodation_Image (
+    acc_img_id int PRIMARY KEY,
+    image VARBINARY(MAX)
+)
+CREATE TABLE Accommodation (
+    accommodation_id int PRIMARY KEY,
+    name nvarchar(100),
+    description nvarchar(255),
+    location nvarchar(100),
+    acc_img_id int FOREIGN KEY REFERENCES Accommodation_Image(acc_img_id)
+)
+CREATE TABLE Meal_Option (
+    meal_option_id int PRIMARY KEY,
+    tour_booking_id int FOREIGN KEY REFERENCES Tour_Booking(tour_booking_id),
+    name nvarchar(100) NOT NULL,
+    description nvarchar(255),
+    price numeric(10,2)
+)
+CREATE TABLE Tour_Vehicle (
+    tour_vehicle_id int PRIMARY KEY,
+    tour_id int FOREIGN KEY REFERENCES Tour(tour_id),
+    vehicle_id int FOREIGN KEY REFERENCES Vehicle(vehicle_id),
+    start_date date,
+    end_date date
+)
+CREATE TABLE Tour_Driver (
+    tour_driver_id int PRIMARY KEY,
+    tour_id int FOREIGN KEY REFERENCES Tour(tour_id),
+    driver_id int FOREIGN KEY REFERENCES Driver(driver_id),
+    start_date date,
+    end_date date
+)
+CREATE TABLE Tourist_Feedback (
+    tourist_feedback_id int PRIMARY KEY,
+    tourist_id int FOREIGN KEY REFERENCES Tourist(tourist_id),
+    star int,  --index
+    description nvarchar(255)
+)
+CREATE TABLE Tour_Guide_Feedback (
+    guide_feedback_id int PRIMARY KEY,
+    guide_id int FOREIGN KEY REFERENCES Guide(guide_id),
+    description varchar(max)
+)
+CREATE TABLE Customer_Service_Employee (
+    employee_id int PRIMARY KEY,
+    name nvarchar(50) NOT NULL,
+    last_name nvarchar(50) NOT NULL,
+    email nvarchar(100),
+    phone varchar(20) NOT NULL
+)
+CREATE TABLE Request_Type (
+    request_type_id int PRIMARY KEY,
+    type_name nvarchar(50) NOT NULL
+)
+CREATE TABLE Customer_Service_Request (
+    service_request_id int PRIMARY KEY,
+    customer_id int FOREIGN KEY REFERENCES Tourist(tourist_id),
+    employee_id int FOREIGN KEY REFERENCES Customer_Service_Employee(employee_id),
+    request_type_id int FOREIGN KEY REFERENCES Request_Type(request_type_id),
+    request_description nvarchar(255),
+    request_date_time datetime
+)
+
